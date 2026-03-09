@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aula 4 - Lista de estudos</title>
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body>
+    <header class="hero">
+      <div class="container">
+        <p class="eyebrow">Aplicacoes Front-End</p>
+        <h1>Lista de estudos do dia</h1>
+        <p class="hero__text">
+          Pratica de DOM, eventos, validacao simples e lista dinamica.
+        </p>
+      </div>
+    </header>
+
+    <main class="container layout">
+      <section class="panel">
+        <h2>Novo item</h2>
+
+        <form id="study-form" class="study-form">
+          <label class="field">
+            <span>Atividade</span>
+            <input
+              id="study-input"
+              name="title"
+              type="text"
+              placeholder="Ex: Revisar addEventListener"
+            />
+          </label>
+
+          <button class="btn btn--primary" type="submit">Adicionar</button>
+        </form>
+
+        <p id="feedback" class="feedback" aria-live="polite"></p>
+      </section>
+
+      <section class="panel">
+        <div class="panel__header">
+          <div>
+            <h2>Lista dinamica</h2>
+            <p class="panel__subtitle">Adicione atividades e remova quando nao precisar mais.</p>
+          </div>
+        </div>
+
+        <p id="empty-state" class="empty-state" hidden>
+          Nenhum item cadastrado ainda.
+        </p>
+
+        <ul id="study-list" class="study-list" aria-label="Itens de estudo"></ul>
+      </section>
+    </main>
+
+    <script src="assets/js/script.js"></script>
+  </body>
+</html>
