@@ -19,7 +19,7 @@
 
     <main class="container layout">
       <section class="panel">
-        <h2>Novo item</h2>
+        <h2>Novo item manual</h2>
 
         <form id="study-form" class="study-form">
           <label class="field">
@@ -37,15 +37,42 @@
 
         <p id="feedback" class="feedback" aria-live="polite"></p>
       </section>
-
+      <section class="panel">
+        <h2>Sugestoes da API</h2>
+        <p class="panel_subtitle">
+          Evolua a lista da aula 04 consumindo jsonplaceholder (`/todos`), Use um userID de 1 a 10 ou deixar em branco.
+        </p>
+            <p class="panel__subtitle">Adicione atividades e remova quando nao precisar mais.</p>
+            <form id="api-form" class="study-form">
+              <label class="field">
+                <span>UserID</span>
+                <input
+                  id="user-id"
+                  name="userId"
+                  type="number"
+                  placeholder="Ex: 1"
+                  min="1"
+                  max="10"
+                />
+              </label>
+              <button class="btn btn--ghost" type="submit">Buscar Sugestoes</button>
+            </form>
+            <p id="api-feedback" class="feedback" aria-live="polite"></p>
+      </section>
+      
       <section class="panel">
         <div class="panel__header">
           <div>
             <h2>Lista dinamica</h2>
-            <p class="panel__subtitle">Adicione atividades e remova quando nao precisar mais.</p>
+            <p class="panel__subtitle">
+              A mesma lista agora pode receber items manuais e sugestões da API. 
+            </p>
           </div>
+          <button id="reload_button" class="btn btn--ghost" type="button">Recarregar a ultima busca</button>
         </div>
-
+        <p id="status-message" class="status" aria-live="polite" hidden>
+            Carregando sugestões da API...
+        </p>
         <p id="empty-state" class="empty-state" hidden>
           Nenhum item cadastrado ainda.
         </p>
